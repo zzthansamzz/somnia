@@ -87,3 +87,12 @@ async function sendTransaction() {
         document.getElementById('transactionStatus').textContent = "Transaction failed";
     }
 }
+// Hiển thị network đang kết nối
+async function checkNetwork() {
+  const chainId = await web3.eth.getChainId();
+  const networkName = chainId === 51711 ? "Somnia Testnet" : "Unknown Network";
+  alert(`Connected to: ${networkName}`);
+}
+
+// Gọi hàm sau khi kết nối ví thành công
+checkNetwork();
